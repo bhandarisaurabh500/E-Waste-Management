@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCycle E-Waste Management - Project Study & Interview Handbook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 18mm 15mm 18mm 15mm;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            background: #ffffff;
+            font-size: 13.5px;
+        }
+
+        .cover-page {
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #10b981;
+            margin-bottom: 30px;
+            page-break-after: avoid;
+        }
+
+        .badge-title {
+            display: inline-block;
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        h1.main-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            font-size: 15px;
+            color: #64748b;
+            max-width: 650px;
+            margin: 0 auto 15px;
+        }
+
+        .meta-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 12px;
+            color: #334155;
+        }
+
+        .meta-item strong {
+            color: #0f172a;
+        }
+
+        .section {
+            margin-bottom: 28px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0f172a;
+            border-left: 4px solid #10b981;
+            padding-left: 12px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title .sec-tag {
+            font-size: 11px;
+            font-weight: 600;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 14px;
+        }
+
+        .card-header-custom {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 16px;
+            font-size: 12.5px;
+        }
+
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background: #fcfdfe;
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            background: #f1f5f9;
+            color: #0f766e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11.5px;
+            font-weight: 500;
+        }
+
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Fira Code', monospace;
+            padding: 12px 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 11.5px;
+            line-height: 1.5;
+            margin: 10px 0 14px;
+        }
+
+        .qa-box {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #0284c7;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 14px;
+            page-break-inside: avoid;
+        }
+
+        .qa-box.domain {
+            border-left-color: #10b981;
+        }
+
+        .qa-box.java {
+            border-left-color: #f59e0b;
+        }
+
+        .question {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .marathi-exp {
+            background: #f0fdf4;
+            border: 1px dashed #86efac;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #166534;
+            margin-bottom: 6px;
+        }
+
+        .answer {
+            color: #334155;
+            font-size: 12.5px;
+            line-height: 1.55;
+        }
+
+        .highlight-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 12px 0;
+            color: #1e40af;
+        }
+
+        .diagram-box {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 14px;
+            text-align: center;
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            color: #334155;
+            line-height: 1.4;
+            margin: 12px 0;
+            white-space: pre;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Section -->
+    <div class="cover-page">
+        <div class="badge-title">🎓 Academic & Placement Master Study Handbook</div>
+        <h1 class="main-title">🌿 EcoCycle: E-Waste Management Portal</h1>
+        <p class="subtitle">Complete Technical Architecture, Execution Guide & Top Interview Q&A</p>
+        
+        <div class="meta-grid">
+            <div class="meta-item"><strong>Tech Stack:</strong> Spring Boot 3.3.5, Java 21, MySQL 8.0, Thymeleaf 3</div>
+            <div class="meta-item"><strong>Developer:</strong> Saurabh Bhandari</div>
+            <div class="meta-item"><strong>Architecture:</strong> 3-Tier Layered MVC Pattern</div>
+            <div class="meta-item"><strong>Repository:</strong> github.com/bhandarisaurabh500/E-Waste-Management</div>
+        </div>
+    </div>
+
+    <!-- Section 1: Project Overview -->
+    <div class="section">
+        <div class="section-title">
+            <span>1. Project Overview & Problem Statement</span>
+            <span class="sec-tag">Domain & Value</span>
+        </div>
+        <p>
+            <strong>The Problem:</strong> Rapid technological advancement has created an exponential increase in Electronic Waste (E-Waste). Discarded laptops, smartphones, batteries, and appliances contain hazardous elements like <em>Lead (Pb), Mercury (Hg), Cadmium (Cd), and Brominated Flame Retardants</em>. Unregulated disposal leads to severe groundwater contamination, toxic air pollution, and massive loss of recoverable precious metals (Gold, Silver, Copper, Platinum).
+        </p>
+        <p>
+            <strong>The EcoCycle Solution:</strong> <strong>EcoCycle</strong> is a unified, automated digital portal designed to bring transparency and efficiency to e-waste disposal across three distinct stakeholders:
+        </p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-header-custom">👤 1. Individual Citizens</div>
+                <p style="font-size: 12px; margin-bottom: 0;">Schedule doorstep e-waste pickups with condition assessment, photo uploads, OTP verification, and instant receipts.</p>
+            </div>
+            <div class="card">
+                <div class="card-header-custom">🏢 2. Corporate ITAD</div>
+                <p style="font-size: 12px; margin-bottom: 0;">Enterprise bulk decommissioning, EPR regulatory reporting, and certified NIST 800-88 data destruction.</p>
+            </div>
+            <div class="card">
+                <div class="card-header-custom">🏪 3. Certified Sellers</div>
+                <p style="font-size: 12px; margin-bottom: 0;">Circular economy secondary marketplace for refurbished Grade-A electronics with warranty & COD checkout.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Technical Architecture -->
+    <div class="section">
+        <div class="section-title">
+            <span>2. Technical Architecture & Component Flow</span>
+            <span class="sec-tag">Architecture</span>
+        </div>
+        <p>The application follows the industry-standard <strong>Layered Spring MVC Pattern</strong>, enforcing strict separation of concerns:</p>
+        
+        <div class="diagram-box">
++-----------------------------------------------------------------------------------+
+|               PRESENTATION LAYER (Thymeleaf 3 + Bootstrap 5 + CSS3)               |
++-----------------------------------------------------------------------------------+
+                                         │ (HTTP Form Submissions / REST GET/POST)
+                                         ▼
++-----------------------------------------------------------------------------------+
+|                         SPRING MVC CONTROLLER LAYER                               |
+|   • UserController      • CorprativeController      • SellingController           |
++-----------------------------------------------------------------------------------+
+                                         │ (DTOs / Entities / Injected Services)
+                                         ▼
++-----------------------------------------------------------------------------------+
+|                         SERVICE LAYER (Business Logic)                            |
+|   • UserService         • CorprativeService         • SellingService              |
+|   • PickupServices      • PickupServiceOfCorprative • MailService (SMTP OTP)      |
++-----------------------------------------------------------------------------------+
+                                         │ (CRUD Operations & Custom Queries)
+                                         ▼
++-----------------------------------------------------------------------------------+
+|                     DATA ACCESS LAYER (Spring Data JPA Repositories)              |
+|   • UserRepository1     • CorpartiveRepository      • sellingRepository           |
+|   • PickupRepositoryuser• PickupRepositorycor                                     |
++-----------------------------------------------------------------------------------+
+                                         │ (Hikari Connection Pooling / SQL)
+                                         ▼
++-----------------------------------------------------------------------------------+
+|                     PERSISTENCE LAYER (MySQL 8.0 Relational DB)                    |
++-----------------------------------------------------------------------------------+
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Section 3: Database Entities -->
+    <div class="section">
+        <div class="section-title">
+            <span>3. Database Schema & Entity Design</span>
+            <span class="sec-tag">JPA / MySQL</span>
+        </div>
+        <p>Spring Data JPA automatically synchronizes the following entities with MySQL database tables via <code>spring.jpa.hibernate.ddl-auto=update</code>:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Entity Class</th>
+                    <th>Database Table</th>
+                    <th>Key Fields & Attributes</th>
+                    <th>Purpose / Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>User.java</code></td>
+                    <td><code>user</code></td>
+                    <td><code>id (PK)</code>, <code>name</code>, <code>email</code>, <code>password</code>, <code>mobile</code>, <code>address</code></td>
+                    <td>Individual citizen profiles and credentials.</td>
+                </tr>
+                <tr>
+                    <td><code>Corprative.java</code></td>
+                    <td><code>corprative</code></td>
+                    <td><code>id (PK)</code>, <code>companyName</code>, <code>email</code>, <code>adress</code>, <code>contact</code>, <code>password</code></td>
+                    <td>Corporate enterprise ITAD partners.</td>
+                </tr>
+                <tr>
+                    <td><code>Pickup.java</code></td>
+                    <td><code>pickup</code></td>
+                    <td><code>id (PK)</code>, <code>productname</code>, <code>itemtype</code>, <code>damagepersentage</code>, <code>pickupdate</code>, <code>description</code>, <code>photoes</code></td>
+                    <td>Citizen doorstep pickup requests.</td>
+                </tr>
+                <tr>
+                    <td><code>PickupCorprater.java</code></td>
+                    <td><code>pickup_corprater</code></td>
+                    <td><code>id (PK)</code>, <code>productname</code>, <code>itemtype</code>, <code>damagepersentage</code>, <code>pickupdate</code>, <code>description</code>, <code>photoes</code></td>
+                    <td>Corporate bulk IT asset pickup requests.</td>
+                </tr>
+                <tr>
+                    <td><code>UserDtls.java</code></td>
+                    <td><code>user_dtls</code></td>
+                    <td><code>idsell (PK)</code>, <code>usernamesell</code>, <code>emailsell</code>, <code>contactsell</code>, <code>adresssell</code>, <code>passwordsell</code></td>
+                    <td>Authorized refurbishers and scrap vendors.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Section 4: Execution Guide -->
+    <div class="section">
+        <div class="section-title">
+            <span>4. Step-by-Step Execution Guide (How to Run)</span>
+            <span class="sec-tag">Execution</span>
+        </div>
+        
+        <div class="highlight-box">
+            <strong>Prerequisites:</strong> JDK 21 (LTS), Apache Maven 3.9+, MySQL Server running on port <code>3306</code>.
+        </div>
+
+        <p><strong>Step 1: Verify MySQL Database</strong></p>
+        <pre>mysql -u root -p
+CREATE DATABASE IF NOT EXISTS e_wastemanagement;</pre>
+
+        <p><strong>Step 2: Configuration in <code>application.properties</code></strong></p>
+        <pre>spring.datasource.url=jdbc:mysql://localhost:3306/e_wastemanagement?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.hibernate.ddl-auto=update
+server.port=8080</pre>
+
+        <p><strong>Step 3: Launch via Terminal (PowerShell / Command Prompt)</strong></p>
+        <pre>$env:JAVA_HOME = "C:\Program Files\Java\jdk-21"
+& "C:\Users\ASUS\Downloads\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin\mvn.cmd" spring-boot:run</pre>
+
+        <p><strong>Step 4: Access in Web Browser</strong></p>
+        <p>Navigate to <code>http://localhost:8080/</code> in Google Chrome / Edge.</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Section 5: Top Interview Q&A -->
+    <div class="section">
+        <div class="section-title">
+            <span>5. Top 20 Technical Interview Questions & Answers</span>
+            <span class="sec-tag">Interview Prep</span>
+        </div>
+
+        <!-- Q1 -->
+        <div class="qa-box domain">
+            <div class="question">Q1: Can you explain your project in 60 seconds (Elevator Pitch)?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> प्रोजेक्टचा उद्देश, वापरलेले तंत्रज्ञान आणि 3 मुख्य रोल्स थोडक्यात सांगणे.</div>
+            <div class="answer">
+                "I developed <strong>EcoCycle</strong>, an enterprise-grade E-Waste Management & Circular Economy web platform built using <strong>Spring Boot 3, Thymeleaf, Spring Data JPA, and MySQL</strong>. It solves the critical environmental hazard of electronic waste by connecting three stakeholders: <strong>Citizens</strong> who can schedule doorstep e-waste pickups with OTP verification; <strong>Corporates</strong> who need bulk IT Asset Disposition (ITAD) and EPR compliance reports; and <strong>Refurbishers</strong> who sell certified second-life hardware on a secondary marketplace. I designed the MVC architecture, implemented email OTP authentication, designed the relational schema, and built a modern responsive UI."
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qa-box java">
+            <div class="question">Q2: Why did you choose Spring Boot over traditional Spring Framework?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> Spring Boot मधील Auto-Configuration आणि Embedded Tomcat सर्वरचा फायदा.</div>
+            <div class="answer">
+                "Spring Boot provides three major advantages:
+                <br>1. <strong>Auto-Configuration:</strong> Automatically configures beans and database datasources based on classpath dependencies.
+                <br>2. <strong>Embedded Web Server:</strong> Comes with embedded Tomcat (running on port 8080), eliminating the need for manual WAR deployments.
+                <br>3. <strong>Starter POMs:</strong> <code>spring-boot-starter-web</code>, <code>spring-boot-starter-data-jpa</code>, and <code>spring-boot-starter-mail</code> simplify dependency management without XML boilerplate."
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qa-box java">
+            <div class="question">Q3: How does the OTP Email verification flow work internally?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> युझरने ईमेल टाकल्यावर OTP कसा तयार होतो आणि JavaMailSender कसा काम करतो.</div>
+            <div class="answer">
+                "When a user submits their registration form:
+                <br>1. The controller calls <code>MailService.sendOtp(email)</code>.
+                <br>2. <code>MailService</code> generates a random 6-digit number using <code>Random</code> or <code>SecureRandom</code>.
+                <br>3. Using Spring's <code>JavaMailSender</code> configured with SMTP (<code>smtp.gmail.com</code>), a formatted HTML email is sent.
+                <br>4. The generated OTP is stored in the <code>HttpSession</code>.
+                <br>5. When the user submits the OTP, the controller validates the submitted value against the session OTP before persisting the record to MySQL via <code>userRepository.save(user)</code>."
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qa-box java">
+            <div class="question">Q4: What is the purpose of Thymeleaf Layout Fragments (`th:replace`)?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> Header, Navbar आणि Footer प्रत्येक पेजवर पुन्हा न लिहिता base.html मधून reuse करणे.</div>
+            <div class="answer">
+                "In traditional HTML, headers, navbars, and footers must be duplicated across every file. In EcoCycle, we created a single master layout <code>base.html</code>. Child templates (like <code>index.html</code>, <code>pickup.html</code>) use <code>th:replace="~{base::layout(~{::body})}"</code> to inject their page content into the base template. This follows the <strong>DRY (Don't Repeat Yourself)</strong> principle and ensures uniform styling across all 14 routes."
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qa-box domain">
+            <div class="question">Q5: What are ITAD and EPR in E-Waste Management?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> ITAD म्हणजे कंपनीचे कॉम्प्युटर सुरक्षित नष्ट करणे, आणि EPR म्हणजे सरकारी नियमांनुसार पुनर्वापर करणे.</div>
+            <div class="answer">
+                "<strong>ITAD (IT Asset Disposition):</strong> The business practice of securely wiping, degaussing, and recycling obsolete corporate IT hardware in compliance with environmental and data security laws (such as NIST 800-88).
+                <br><strong>EPR (Extended Producer Responsibility):</strong> Environmental policy mandate where electronics producers and corporate consumers are legally obligated to ensure end-of-life recycling of the goods they produce or consume."
+            </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="qa-box java">
+            <div class="question">Q6: What is the difference between `@ModelAttribute` and `@RequestParam`?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> फॉर्मचा पूर्ण Java Object बाइंड करणे विरुद्ध सिंगल क्वेरी पॅरामीटर वाचणे.</div>
+            <div class="answer">
+                "<code>@ModelAttribute</code> is used to bind an entire HTML form's input fields directly into a Java POJO/Entity (e.g., binding <code>Pickup</code> object in <code>/savepickup</code>). 
+                <br><code>@RequestParam</code> is used to extract individual HTTP query parameters or simple form fields (e.g., reading <code>@RequestParam("otp") int otp</code>)."
+            </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="qa-box java">
+            <div class="question">Q7: How does Spring Data JPA simplify database operations?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> JDBC किंवा SQL क्वेरी न लिहिता JpaRepository द्वारे ऑटोमॅटिक CRUD ऑपरेशन्स मिळणे.</div>
+            <div class="answer">
+                "By extending <code>JpaRepository&lt;User, Integer&gt;</code>, Spring Data JPA dynamically generates proxy implementations at runtime. It provides built-in CRUD methods like <code>save()</code>, <code>findById()</code>, <code>findAll()</code>, <code>delete()</code>, and query generation by method name (e.g., <code>findByEmail()</code>) without writing boilerplate SQL or JDBC Connection code."
+            </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="qa-box java">
+            <div class="question">Q8: How does Spring Boot handle database connection pooling?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> HikariCP चा वापर करून डेटाबेस कनेक्शन जलद आणि कार्यक्षम ठेवणे.</div>
+            <div class="answer">
+                "Spring Boot uses <strong>HikariCP</strong> as its default high-performance JDBC connection pool. Instead of opening and closing an expensive physical database connection for every incoming HTTP request, HikariCP maintains a pool of pre-established connections, significantly boosting throughput and reducing latency."
+            </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="qa-box java">
+            <div class="question">Q9: How do you handle file/image uploads for damaged e-waste devices?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> युझरने अपलोड केलेला फोटो MultipartFile द्वारे कसा सेव्ह केला जातो.</div>
+            <div class="answer">
+                "The HTML form uses <code>enctype="multipart/form-data"</code>. In the controller, Spring MVC receives the file as a <code>MultipartFile</code> parameter. The file can then be stored on the server filesystem in <code>static/img/uploads/</code> or encoded in Base64/cloud storage (AWS S3) and the filename is persisted in the <code>photoes</code> column of the <code>Pickup</code> database entity."
+            </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="qa-box java">
+            <div class="question">Q10: What is the function of `spring.jpa.hibernate.ddl-auto=update`?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> Java मधील Entity क्लासेसनुसार डेटाबेसमधील टेबल्स आपोआप तयार किंवा अपडेट होणे.</div>
+            <div class="answer">
+                "<code>ddl-auto=update</code> instructs Hibernate to inspect the JPA Entity annotations (<code>@Entity</code>, <code>@Table</code>, <code>@Column</code>) at application startup and automatically update or create missing database tables and columns in MySQL without dropping existing data."
+            </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="qa-box java">
+            <div class="question">Q11: What HTTP methods are used in this project and when?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> GET आणि POST मेथड्सचा वापर कुठे केला आहे.</div>
+            <div class="answer">
+                "<strong>GET:</strong> Used for fetching pages and resources (e.g., <code>GET /</code> for landing page, <code>GET /p</code> for pickup form, <code>GET /loginsell</code> for marketplace).
+                <br><strong>POST:</strong> Used for submitting sensitive data and mutating database state (e.g., <code>POST /saveuser</code> for registration, <code>POST /verifyOtp</code>, <code>POST /savepickup</code>)."
+            </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="qa-box java">
+            <div class="question">Q12: If this application has 100,000 users, how would you scale it?</div>
+            <div class="marathi-exp">💡 <strong>मराठी स्पष्टीकरण:</strong> भविष्यात युझर्स वाढल्यास सिस्टीम कशी मोठी (Scale) करता येईल.</div>
+            <div class="answer">
+                "To scale EcoCycle:
+                <br>1. <strong>Stateless Auth:</strong> Replace <code>HttpSession</code> with <strong>JWT (JSON Web Tokens)</strong> or distributed Redis session storage.
+                <br>2. <strong>Async Email Queue:</strong> Use <strong>RabbitMQ / Apache Kafka</strong> with Spring <code>@Async</code> for non-blocking OTP email dispatch.
+                <br>3. <strong>Cloud Storage:</strong> Move image uploads from local disk to <strong>Amazon S3</strong> bucket with CloudFront CDN.
+                <br>4. <strong>Database Optimization:</strong> Implement MySQL Read-Replicas, database indexing on <code>email</code> and <code>pickupdate</code>, and Redis caching for the marketplace."
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        🌿 <strong>EcoCycle E-Waste Management System</strong> &bull; Generated for Academic Study & Interview Excellence &bull; Developed by Saurabh Bhandari
+    </div>
+
+</body>
+</html>
