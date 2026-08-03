@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Registration - EcoCycle E-Waste Portal</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- Core Styles -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="auth-wrapper">
+
+    <div class="auth-card" style="max-width: 540px;">
+        <!-- Header -->
+        <div class="auth-header">
+            <span class="auth-badge"><i class="fas fa-user-plus"></i> Citizen Portal</span>
+            <h2>Create Account</h2>
+            <p>Join the digital sustainability movement today</p>
+        </div>
+
+        <!-- Body -->
+        <div class="auth-body">
+            <!-- Role Switch Tabs -->
+            <div class="auth-tabs">
+                <a href="/register" class="auth-tab-item active"><i class="fas fa-user"></i> User</a>
+                <a href="/corprative" class="auth-tab-item"><i class="fas fa-building"></i> Corporate</a>
+                <a href="/loginsell" class="auth-tab-item"><i class="fas fa-store"></i> Seller</a>
+            </div>
+
+            <!-- Alerts -->
+            <div th:if="${fail}" class="alert-custom-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span th:text="${fail}"></span>
+            </div>
+
+            <div th:if="${susses}" class="alert-custom-success">
+                <i class="fas fa-check-circle"></i>
+                <span th:text="${susses}"></span>
+            </div>
+
+            <div th:if="${otpwindow}" class="alert-custom-success" style="background: #eff6ff; color: #1e40af; border-color: #bfdbfe;">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>OTP has been sent to your email. Please enter below to verify!</span>
+            </div>
+
+            <!-- Form -->
+            <form th:action="@{/signup}" th:object="${user}" method="post">
+                
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <div class="form-group-custom">
+                            <label>User ID</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-id-badge"></i>
+                                <input type="number" name="id" th:value="${user?.id}" placeholder="e.g. 101" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group-custom">
+                            <label>Full Name / Username</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" name="username" th:value="${user?.username}" placeholder="Enter full name" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group-custom">
+                    <label>Email Address</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" th:value="${user?.email}" placeholder="yourname@domain.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group-custom">
+                    <label>Residential Address</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" name="adress" th:value="${user?.adress}" placeholder="House no, Street, City" required>
+                    </div>
+                </div>
+
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <div class="form-group-custom">
+                            <label>Contact Number</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="text" name="contact" th:value="${user?.contact}" placeholder="10-digit mobile" maxlength="10" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group-custom">
+                            <label>Password</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" name="password" th:value="${user?.password}" placeholder="Max 8 chars" maxlength="8" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTP Input Area if generated -->
+                <div th:if="${otpwindow}" class="otp-box">
+                    <label><i class="fas fa-key"></i> Enter 6-Digit Email OTP</label>
+                    <input type="text" name="otp" id="otp" placeholder="••••••" maxlength="6" required autofocus>
+                    <p class="small text-muted mt-2 mb-0">Check your inbox/spam folder for verification code</p>
+                </div>
+
+                <button type="submit" class="btn-eco-primary w-100 mt-2" style="padding: 14px; font-size: 1rem;">
+                    <i class="fas fa-shield-alt"></i> 
+                    <span th:text="${otpwindow} ? 'Verify OTP & Complete Registration' : 'Generate OTP & Register'">Register</span>
+                </button>
+            </form>
+
+            <div class="text-center mt-4 pt-2 border-top">
+                <p class="text-muted small mb-2">Already have an account?</p>
+                <a href="/loginpage" class="btn-eco-outline w-100" style="padding: 10px; font-size: 0.9rem;">
+                    <i class="fas fa-sign-in-alt"></i> Back to Login
+                </a>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="/" class="text-muted small text-decoration-none">
+                    <i class="fas fa-arrow-left"></i> Back to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

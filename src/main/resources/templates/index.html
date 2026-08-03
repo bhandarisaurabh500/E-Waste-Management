@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoCycle - Sustainable E-Waste Management Portal</title>
+</head>
+<body>
+
+    <!-- 🌟 Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <div class="badge-eco mb-3">
+                        <i class="fas fa-leaf"></i> Certified Zero-Landfill E-Waste Recycler
+                    </div>
+                    <h1 class="hero-title">
+                        Responsible <span class="text-gradient">E-Waste Recycling</span> For A Greener Planet.
+                    </h1>
+                    <p class="hero-subtitle">
+                        Safely dispose of your obsolete electronics, laptops, mobiles, and appliances. Get certified data wiping, doorstep pickup, and contribute to circular sustainability.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="/p" class="btn-eco-primary btn-lg">
+                            <i class="fas fa-truck-pickup"></i> Schedule Doorstep Pickup
+                        </a>
+                        <a href="/loginsell" class="btn-eco-light btn-lg">
+                            <i class="fas fa-store"></i> Explore E-Store
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-4 text-muted small pt-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-shield-alt text-primary"></i> 100% Data Security
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-award text-primary"></i> Govt Compliant
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-truck text-primary"></i> Free Home Pickup
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="hero-stats-card">
+                        <h4 class="text-white mb-4 d-flex align-items-center gap-2">
+                            <i class="fas fa-chart-line text-primary"></i> Real-Time Impact Metric
+                        </h4>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="stat-item bg-dark rounded-3 p-3">
+                                    <span class="stat-number">150K+</span>
+                                    <span class="stat-label">Devices Recycled</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item bg-dark rounded-3 p-3">
+                                    <span class="stat-number">620+ T</span>
+                                    <span class="stat-label">Carbon Offset</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item bg-dark rounded-3 p-3">
+                                    <span class="stat-number">99.8%</span>
+                                    <span class="stat-label">Material Recovery</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item bg-dark rounded-3 p-3">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Corporate Clients</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-top border-secondary text-center">
+                            <span class="small text-light">
+                                <i class="fas fa-globe text-primary"></i> Join over 25,000 conscious citizens making an impact!
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 Services Grid -->
+    <section class="py-5" style="background: #ffffff;">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <div class="badge-eco mb-2">Our Solutions</div>
+                <h2 class="display-6 fw-bold">Comprehensive E-Waste Services</h2>
+                <p class="text-muted">End-to-end lifecycle solutions for individuals, businesses, and electronics recyclers.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="eco-card">
+                        <div class="card-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="card-title">Residential Pickup</h3>
+                        <p class="card-desc">
+                            Schedule doorstep pickup for outdated laptops, broken TVs, mobile phones, batteries, and home appliances with ease.
+                        </p>
+                        <a href="/p" class="text-primary fw-semibold text-decoration-none mt-3 d-inline-flex align-items-center gap-1">
+                            Book Pickup <i class="fas fa-arrow-right small"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="eco-card">
+                        <div class="card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="card-title">Corporate EPR</h3>
+                        <p class="card-desc">
+                            Extended Producer Responsibility (EPR) compliance, bulk IT asset disposition (ITAD), and certified green audit reports.
+                        </p>
+                        <a href="/corprative" class="text-primary fw-semibold text-decoration-none mt-3 d-inline-flex align-items-center gap-1">
+                            Corporate Partner <i class="fas fa-arrow-right small"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="eco-card">
+                        <div class="card-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3 class="card-title">Data Sanitization</h3>
+                        <p class="card-desc">
+                            NIST 800-88 compliant secure data wiping and physical destruction of hard drives to ensure complete data security.
+                        </p>
+                        <a href="/about" class="text-primary fw-semibold text-decoration-none mt-3 d-inline-flex align-items-center gap-1">
+                            Security Standards <i class="fas fa-arrow-right small"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="eco-card">
+                        <div class="card-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="card-title">Refurbished Tech</h3>
+                        <p class="card-desc">
+                            Give hardware a second life! Browse certified refurbished gadgets and appliances verified by our engineering experts.
+                        </p>
+                        <a href="/loginsell" class="text-primary fw-semibold text-decoration-none mt-3 d-inline-flex align-items-center gap-1">
+                            Visit Store <i class="fas fa-arrow-right small"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 How It Works -->
+    <section class="py-5" style="background: var(--bg-main);">
+        <div class="container py-4">
+            <div class="text-center max-w-700 mx-auto mb-5">
+                <div class="badge-eco mb-2">Process</div>
+                <h2 class="display-6 fw-bold">How EcoCycle Works</h2>
+                <p class="text-muted">Simple 4-step streamlined process to dispose of electronic waste responsibly.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="eco-card bg-white text-center align-items-center">
+                        <div class="step-number">1</div>
+                        <h4 class="card-title">Request Online</h4>
+                        <p class="card-desc">Fill out your item details, upload photos, and choose your preferred date and time slot.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="eco-card bg-white text-center align-items-center">
+                        <div class="step-number">2</div>
+                        <h4 class="card-title">Doorstep Pickup</h4>
+                        <p class="card-desc">Our certified eco-agent arrives at your location for contactless, safe device inspection and pickup.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="eco-card bg-white text-center align-items-center">
+                        <div class="step-number">3</div>
+                        <h4 class="card-title">Safe Processing</h4>
+                        <p class="card-desc">Devices undergo military-grade data wiping, component dismantling, and zero-pollution recycling.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="eco-card bg-white text-center align-items-center">
+                        <div class="step-number">4</div>
+                        <h4 class="card-title">Green Impact</h4>
+                        <p class="card-desc">Receive green certification, eco-credits, or financial rewards while protecting our environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 Why Choose Us & Environmental Impact -->
+    <section class="py-5" style="background: #ffffff;">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="badge-eco mb-2">Why Choose Us</div>
+                    <h2 class="display-6 fw-bold mb-4">Building a Cleaner, Sustainable Digital World</h2>
+                    <p class="text-muted mb-4">
+                        Improper e-waste disposal releases toxic heavy metals like lead, mercury, and cadmium into soil and water bodies. EcoCycle ensures 100% compliant and eco-friendly recovery.
+                    </p>
+
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="p-2 rounded-circle bg-success text-white" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-check small"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Certified Data Destruction</h5>
+                                <p class="text-muted small mb-0">Total confidentiality with certified physical degaussing and digital data sanitization.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="p-2 rounded-circle bg-success text-white" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-check small"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Maximum Material Recovery</h5>
+                                <p class="text-muted small mb-0">Recovering precious metals like Gold, Silver, Copper, and rare earth elements back into production.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="p-2 rounded-circle bg-success text-white" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-check small"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Pollution Board Authorized</h5>
+                                <p class="text-muted small mb-0">Full compliance with Central Pollution Control Board (CPCB) and ISO 14001 guidelines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="p-4 rounded-4 shadow-lg" style="background: var(--grad-dark); color: #ffffff;">
+                        <h4 class="text-white mb-3"><i class="fas fa-seedling text-primary"></i> Environmental Benefits</h4>
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item bg-transparent text-white border-secondary py-3 d-flex align-items-center justify-content-between">
+                                <span><i class="fas fa-smog text-info me-2"></i> Reduces Air & Soil Pollution</span>
+                                <span class="badge bg-success">Major Impact</span>
+                            </div>
+                            <div class="list-group-item bg-transparent text-white border-secondary py-3 d-flex align-items-center justify-content-between">
+                                <span><i class="fas fa-water text-primary me-2"></i> Prevents Groundwater Contamination</span>
+                                <span class="badge bg-info">Crucial</span>
+                            </div>
+                            <div class="list-group-item bg-transparent text-white border-secondary py-3 d-flex align-items-center justify-content-between">
+                                <span><i class="fas fa-coins text-warning me-2"></i> Recovers High Value Precious Metals</span>
+                                <span class="badge bg-warning text-dark">Circular Economy</span>
+                            </div>
+                            <div class="list-group-item bg-transparent text-white border-secondary py-3 d-flex align-items-center justify-content-between">
+                                <span><i class="fas fa-heartbeat text-danger me-2"></i> Protects Public Health & Sanitation</span>
+                                <span class="badge bg-success">Safety 100%</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="/register" class="btn btn-eco-primary w-100">
+                                <i class="fas fa-user-plus"></i> Join as Green Citizen Today
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 CTA Banner -->
+    <section class="py-5" style="background: var(--grad-hero); color: #ffffff;">
+        <div class="container text-center py-4">
+            <h2 class="display-6 fw-bold mb-3 text-white" style="color: #ffffff !important;">Ready to Recycle Your Electronic Waste?</h2>
+            <p class="lead mb-4 max-w-600 mx-auto" style="color: #e2e8f0 !important;">
+                Schedule your doorstep pickup in less than 2 minutes. Transparent, certified, and eco-friendly!
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="/p" class="btn-eco-primary btn-lg">
+                    <i class="fas fa-truck-pickup"></i> Book Free Pickup
+                </a>
+                <a href="/contact" class="btn-eco-light btn-lg">
+                    <i class="fas fa-phone-alt"></i> Contact Our Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

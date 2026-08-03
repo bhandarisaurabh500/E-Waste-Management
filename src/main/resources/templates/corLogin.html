@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Login - EcoCycle E-Waste Management</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- Core Styles -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="auth-wrapper" style="background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%);">
+
+    <div class="auth-card">
+        <!-- Header -->
+        <div class="auth-header" style="background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%);">
+            <span class="auth-badge" style="background: rgba(2, 132, 199, 0.2); color: #38bdf8; border-color: rgba(2, 132, 199, 0.3);">
+                <i class="fas fa-building"></i> Corporate & EPR Portal
+            </span>
+            <h2>Enterprise Login</h2>
+            <p>Access bulk IT asset disposal, EPR tracking & green certificates</p>
+        </div>
+
+        <!-- Body -->
+        <div class="auth-body">
+            <!-- Role Switch Tabs -->
+            <div class="auth-tabs">
+                <a href="/loginpage" class="auth-tab-item"><i class="fas fa-user"></i> User</a>
+                <a href="/e" class="auth-tab-item active"><i class="fas fa-building"></i> Corporate</a>
+                <a href="/loginpagesell" class="auth-tab-item"><i class="fas fa-store"></i> Seller</a>
+            </div>
+
+            <!-- Alerts -->
+            <div th:if="${error}" class="alert-custom-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span th:text="${error}"></span>
+            </div>
+
+            <!-- Form -->
+            <form th:action="@{/logincor}" method="post">
+                <div class="form-group-custom">
+                    <label>Enterprise Username / Org Code</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-building"></i>
+                        <input type="text" name="username" placeholder="e.g. AcmeCorp" required autofocus>
+                    </div>
+                </div>
+
+                <div class="form-group-custom">
+                    <label>Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Enter corporate password" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-eco-primary w-100 mt-3" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); padding: 14px; font-size: 1rem;">
+                    <i class="fas fa-sign-in-alt"></i> Enterprise Sign In
+                </button>
+            </form>
+
+            <div class="text-center mt-4 pt-2 border-top">
+                <p class="text-muted small mb-2">New corporate partner or enterprise?</p>
+                <a href="/corprative" class="btn-eco-outline w-100" style="padding: 10px; font-size: 0.9rem; border-color: #0284c7; color: #0284c7 !important;">
+                    <i class="fas fa-file-contract"></i> Register Corporate Account
+                </a>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="/" class="text-muted small text-decoration-none">
+                    <i class="fas fa-arrow-left"></i> Back to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

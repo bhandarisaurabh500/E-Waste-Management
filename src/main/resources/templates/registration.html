@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Registration - EcoCycle E-Waste Marketplace</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- Core Styles -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="auth-wrapper" style="background: linear-gradient(135deg, #0f172a 0%, #d97706 100%);">
+
+    <div class="auth-card" style="max-width: 540px;">
+        <!-- Header -->
+        <div class="auth-header" style="background: linear-gradient(135deg, #0f172a 0%, #b45309 100%);">
+            <span class="auth-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">
+                <i class="fas fa-store"></i> Seller & Refurbisher Portal
+            </span>
+            <h2>Seller Registration</h2>
+            <p>Register to list refurbished tech & supply recyclable scrap</p>
+        </div>
+
+        <!-- Body -->
+        <div class="auth-body">
+            <!-- Role Switch Tabs -->
+            <div class="auth-tabs">
+                <a href="/register" class="auth-tab-item"><i class="fas fa-user"></i> User</a>
+                <a href="/corprative" class="auth-tab-item"><i class="fas fa-building"></i> Corporate</a>
+                <a href="/r" class="auth-tab-item active"><i class="fas fa-store"></i> Seller</a>
+            </div>
+
+            <!-- Alerts -->
+            <div th:if="${fail}" class="alert-custom-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span th:text="${fail}"></span>
+            </div>
+
+            <div th:if="${susses}" class="alert-custom-success">
+                <i class="fas fa-check-circle"></i>
+                <span th:text="${susses}"></span>
+            </div>
+
+            <div th:if="${otpwindow}" class="alert-custom-success" style="background: #eff6ff; color: #1e40af; border-color: #bfdbfe;">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>Vendor OTP verification code sent to your registered email!</span>
+            </div>
+
+            <!-- Form -->
+            <form th:action="@{/signupsell}" th:object="${usersell}" method="post">
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <div class="form-group-custom">
+                            <label>Vendor / Seller ID</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-id-badge"></i>
+                                <input type="number" name="idsell" th:value="${usersell?.idsell}" placeholder="e.g. 701" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group-custom">
+                            <label>Store / Seller Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-store"></i>
+                                <input type="text" name="usernamesell" th:value="${usersell?.usernamesell}" placeholder="e.g. TechRefurb Hub" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group-custom">
+                    <label>Business Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="emailsell" th:value="${usersell?.emailsell}" placeholder="vendor@techrefurb.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group-custom">
+                    <label>Warehouse / Business Address</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" name="adresssell" th:value="${usersell?.adresssell}" placeholder="Warehouse No, Industrial Area, City" required>
+                    </div>
+                </div>
+
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <div class="form-group-custom">
+                            <label>Phone / WhatsApp Contact</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="text" name="contactsell" th:value="${usersell?.contactsell}" placeholder="10-digit number" maxlength="10" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group-custom">
+                            <label>Password</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" name="passwordsell" th:value="${usersell?.passwordsell}" placeholder="Max 8 chars" maxlength="8" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OTP Input -->
+                <div th:if="${otpwindow}" class="otp-box">
+                    <label><i class="fas fa-key"></i> Enter Vendor Verification OTP</label>
+                    <input type="text" name="otp" id="otp" placeholder="••••••" maxlength="6" required autofocus>
+                    <p class="small text-muted mt-2 mb-0">Enter the 6-digit code sent to your vendor email</p>
+                </div>
+
+                <button type="submit" class="btn-eco-primary w-100 mt-2" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000000; font-weight: 700; padding: 14px; font-size: 1rem;">
+                    <i class="fas fa-shield-alt"></i> 
+                    <span th:text="${otpwindow} ? 'Verify & Activate Vendor Account' : 'Verify Email & Complete Sign Up'">Register</span>
+                </button>
+            </form>
+
+            <div class="text-center mt-4 pt-2 border-top">
+                <p class="text-muted small mb-2">Already registered as a Seller?</p>
+                <a href="/loginpagesell" class="btn-eco-outline w-100" style="padding: 10px; font-size: 0.9rem; border-color: #d97706; color: #d97706 !important;">
+                    <i class="fas fa-sign-in-alt"></i> Seller Sign In
+                </a>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="/" class="text-muted small text-decoration-none">
+                    <i class="fas fa-arrow-left"></i> Back to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Checkout - EcoCycle Refurbished Store</title>
+</head>
+<body>
+
+    <section class="py-5" style="background: var(--bg-main);">
+        <div class="container py-3">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    
+                    <div class="text-center mb-4">
+                        <div class="badge-eco mb-2">
+                            <i class="fas fa-shield-alt"></i> Safe & Secure Checkout
+                        </div>
+                        <h2 class="display-6 fw-bold">Confirm Delivery & Shipping Details</h2>
+                        <p class="text-muted">Pay securely via Cash on Delivery upon verified doorstep receipt.</p>
+                    </div>
+
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="card-header bg-dark text-white p-4 d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="mb-1 text-white"><i class="fas fa-map-marker-alt text-primary me-2"></i> Shipping & Billing Address</h5>
+                                <p class="text-light small mb-0">Delivery within 2-4 business days.</p>
+                            </div>
+                            <span class="badge bg-warning text-dark px-3 py-2"><i class="fas fa-money-bill-wave"></i> Cash on Delivery</span>
+                        </div>
+
+                        <div class="card-body p-4 p-md-5 bg-white">
+                            <form action="/done" method="get">
+                                
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group-custom">
+                                            <label>Full Name</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-user"></i>
+                                                <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group-custom">
+                                            <label>Email Address</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-envelope"></i>
+                                                <input type="email" id="email" name="email" placeholder="rahul@example.com" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-custom mb-3">
+                                    <label>Complete Street Address / Apartment No</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-home"></i>
+                                        <input type="text" id="address" name="address" placeholder="Flat 402, Green Park Avenue" required>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-4">
+                                        <div class="form-group-custom">
+                                            <label>City</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-city"></i>
+                                                <input type="text" id="city" name="city" placeholder="Pune / Mumbai" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group-custom">
+                                            <label>State</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-map"></i>
+                                                <input type="text" id="state" name="state" placeholder="Maharashtra" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group-custom">
+                                            <label>PIN / Zip Code</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-mail-bulk"></i>
+                                                <input type="number" id="zip" name="zip" placeholder="411001" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 mb-4 rounded-3 d-flex align-items-center justify-content-between" style="background: #f0fdf4; border: 1px solid #bbf7d0;">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <i class="fas fa-hand-holding-usd fs-2 text-success"></i>
+                                        <div>
+                                            <h6 class="mb-0 text-dark fw-bold">Payment Method: Cash On Delivery (COD)</h6>
+                                            <p class="small text-muted mb-0">Check device condition at delivery before paying cash or UPI.</p>
+                                        </div>
+                                    </div>
+                                    <span class="badge bg-success">Verified</span>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="/loginsell" class="btn-eco-outline">
+                                        <i class="fas fa-arrow-left"></i> Back to Store
+                                    </a>
+                                    <button type="submit" class="btn-eco-primary btn-lg">
+                                        <i class="fas fa-lock"></i> Place Order (Cash On Delivery)
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

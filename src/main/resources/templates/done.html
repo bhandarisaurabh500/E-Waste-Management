@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Confirmed - EcoCycle E-Waste Management</title>
+</head>
+<body>
+
+    <section class="py-5" style="background: var(--bg-main); min-height: 70vh; display: flex; align-items: center;">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    
+                    <div class="card border-0 shadow-xl rounded-4 p-4 p-md-5 bg-white">
+                        <!-- Success Check Icon -->
+                        <div class="mx-auto mb-4" style="width: 80px; height: 80px; border-radius: 50%; background: var(--primary-light); color: var(--primary-hover); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: var(--shadow-glow);">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+
+                        <div class="badge-eco mb-3 mx-auto">
+                            <i class="fas fa-shield-check"></i> Request Registered
+                        </div>
+
+                        <h2 class="fw-bold mb-2">Thank You! Your Request is Confirmed</h2>
+                        <p class="text-muted mb-4">
+                            Your e-waste pickup details have been successfully saved into our certified recycling database.
+                        </p>
+
+                        <!-- Next Steps Box -->
+                        <div class="p-3 mb-4 rounded-3 text-start" style="background: var(--bg-main); border: 1px solid var(--border);">
+                            <h6 class="fw-bold mb-2 text-dark"><i class="fas fa-list-ol text-primary me-2"></i> What happens next?</h6>
+                            <ul class="small text-muted mb-0 ps-3">
+                                <li class="mb-1">An EcoCycle certified logistics agent is being assigned to your request.</li>
+                                <li class="mb-1">You will receive an SMS/Email confirmation with your tracking code.</li>
+                                <li>The agent will inspect the items on your chosen date and safely collect them.</li>
+                            </ul>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="/" class="btn-eco-primary">
+                                <i class="fas fa-home"></i> Back to Homepage
+                            </a>
+                            <a href="/p" class="btn-eco-outline">
+                                <i class="fas fa-plus"></i> Submit Another Pickup
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

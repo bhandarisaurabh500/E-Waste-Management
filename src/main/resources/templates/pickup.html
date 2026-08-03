@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule E-Waste Pickup - EcoCycle Portal</title>
+</head>
+<body>
+
+    <section class="py-5" style="background: var(--bg-main);">
+        <div class="container py-3">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    
+                    <!-- Header Banner -->
+                    <div class="text-center mb-4">
+                        <div class="badge-eco mb-2">
+                            <i class="fas fa-truck-pickup"></i> Citizen Pickup Service
+                        </div>
+                        <h2 class="display-6 fw-bold">Schedule Doorstep E-Waste Pickup</h2>
+                        <p class="text-muted">Fill in your electronic item details for hassle-free, certified doorstep collection.</p>
+                    </div>
+
+                    <!-- Pickup Form Card -->
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="card-header bg-dark text-white p-4 d-flex align-items-center justify-content-between">
+                            <div>
+                                <h4 class="mb-1 text-white"><i class="fas fa-recycle text-primary me-2"></i> Item & Pickup Details</h4>
+                                <p class="text-light small mb-0">Our certified eco-agent will inspect and collect the device safely.</p>
+                            </div>
+                            <span class="badge bg-success px-3 py-2">Free Citizen Service</span>
+                        </div>
+
+                        <div class="card-body p-4 p-md-5 bg-white">
+                            <form th:action="@{/pickupform}" enctype="multipart/form-data" th:object="${pickupobj}" method="post">
+                                
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group-custom">
+                                            <label>Product Reference ID</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-barcode"></i>
+                                                <input type="number" name="id" placeholder="e.g. 1001" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group-custom">
+                                            <label>Product / Device Name</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-laptop"></i>
+                                                <input type="text" name="productname" placeholder="e.g. Dell Inspiron Laptop / Samsung Smart TV" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group-custom">
+                                            <label>Item Category</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-tags"></i>
+                                                <select name="itemtype" class="form-select-custom" required>
+                                                    <option value="Laptop / Computer">Laptop / Computer / Monitor</option>
+                                                    <option value="Mobile / Tablet">Mobile Phone / Tablet</option>
+                                                    <option value="Home Appliance">Home Appliance (Fridge, AC, Washing Machine)</option>
+                                                    <option value="Television / Audio">Television / Audio System</option>
+                                                    <option value="Battery / Circuit Board">Battery / Printed Circuit Board (PCB)</option>
+                                                    <option value="Other Electronics">Other Consumer Electronics</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group-custom">
+                                            <label>Damage / Condition Percentage</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-percentage"></i>
+                                                <input type="text" name="damagepersentage" placeholder="e.g. 30% (Minor scratches / Working)" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-group-custom">
+                                            <label>Preferred Pickup Date</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                <input type="date" name="pickupdate" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group-custom">
+                                            <label>Upload Device Photo (for assessment)</label>
+                                            <div class="input-with-icon">
+                                                <i class="fas fa-camera"></i>
+                                                <input type="file" name="photo" class="form-control" accept="image/*" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-custom mb-4">
+                                    <label>Product Description & Working Status</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-align-left" style="top: 25px;"></i>
+                                        <textarea name="description" rows="3" class="form-control-custom" style="padding-left: 42px; width: 100%; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="Provide brief description of the condition, accessories available, etc." required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 mb-4 rounded-3" style="background: var(--primary-light); border: 1px solid rgba(16, 185, 129, 0.3);">
+                                    <div class="d-flex align-items-center gap-2 text-dark small fw-semibold">
+                                        <i class="fas fa-check-circle text-primary"></i>
+                                        By booking, you ensure hazardous materials are disposed of according to CPCB & ISO 14001 guidelines.
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="/" class="btn-eco-outline">
+                                        <i class="fas fa-arrow-left"></i> Cancel
+                                    </a>
+                                    <button type="submit" class="btn-eco-primary btn-lg">
+                                        <i class="fas fa-calendar-check"></i> Confirm & Submit Pickup Request
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

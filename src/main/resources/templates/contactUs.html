@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - EcoCycle E-Waste Management</title>
+</head>
+<body>
+
+    <!-- Header Banner -->
+    <section class="py-5" style="background: var(--grad-hero); color: white;">
+        <div class="container py-3 text-center">
+            <div class="badge-eco mb-2" style="background: rgba(255,255,255,0.15); color: #34d399; border-color: rgba(255,255,255,0.3);">
+                <i class="fas fa-headset"></i> 24/7 Dedicated Eco Support
+            </div>
+            <h1 class="display-5 fw-bold mb-2">Connect With Our Team</h1>
+            <p class="lead text-light max-w-600 mx-auto">
+                Have questions about e-waste disposal, corporate EPR compliance, or bulk pickup? We are here to help!
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Details & Form Section -->
+    <section class="py-5" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="row g-4">
+                
+                <!-- Contact Info Cards -->
+                <div class="col-lg-5">
+                    <h3 class="fw-bold mb-4">Get Direct Assistance</h3>
+                    
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-3 bg-white">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="card-icon mb-0" style="width: 50px; height: 50px; font-size: 1.3rem;">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <span class="text-muted small">Support Helpline</span>
+                                <h6 class="fw-bold mb-0">+91 973-0997-546 / +91 797-268-6582</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-3 bg-white">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="card-icon mb-0" style="width: 50px; height: 50px; font-size: 1.3rem; background: #e0f2fe; color: #0284c7;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-muted small">Official Inquiries & EPR</span>
+                                <h6 class="fw-bold mb-0">bhandarisaurabh500@gmail.com</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-3 bg-white">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="card-icon mb-0" style="width: 50px; height: 50px; font-size: 1.3rem; background: #fef3c7; color: #d97706;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <span class="text-muted small">Headquarters</span>
+                                <h6 class="fw-bold mb-0">Eco-Tech Recycling Hub, Pune, Maharashtra</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Lead Contributors -->
+                    <div class="p-3 bg-light rounded-3 border">
+                        <span class="small fw-bold text-dark d-block mb-2"><i class="fas fa-users text-primary me-1"></i> Core Project Leads:</span>
+                        <div class="small text-muted">
+                            • Saurabh Bhandari &nbsp;|&nbsp; • S. Belhekar &nbsp;|&nbsp; • S. Andhar &nbsp;|&nbsp; • M. Bawadkar
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
+                        <h4 class="fw-bold mb-2">Send Us a Message</h4>
+                        <p class="text-muted small mb-4">Our sustainability manager will respond within 24 hours.</p>
+
+                        <form action="/done" method="get">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-group-custom">
+                                        <label>Your Full Name</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-user"></i>
+                                            <input type="text" placeholder="e.g. John Doe" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group-custom">
+                                        <label>Email Address</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-envelope"></i>
+                                            <input type="email" placeholder="john@example.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group-custom mb-3">
+                                <label>Subject / Topic</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-tag"></i>
+                                    <input type="text" placeholder="e.g. Bulk Corporate Pickup / General Inquiry" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group-custom mb-4">
+                                <label>Message</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-comment-dots" style="top: 25px;"></i>
+                                    <textarea rows="4" class="form-control-custom" style="padding-left: 42px; width: 100%; border: 1px solid var(--border); border-radius: var(--radius-md);" placeholder="Write your message here..." required></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-eco-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane"></i> Send Message Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
